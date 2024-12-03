@@ -1,4 +1,126 @@
-<div class="dashboard-container">
-    <h2>Welcome to the Dashboard!</h2>
-    <button (click)="logout()">Logout</button>
-</div>
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Product+Sans:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <title>Admin Dashboard</title>
+</head>
+
+<body>
+    <div class="grid-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-left">
+                <span class="material-icons-outlined">search</span>
+            </div>
+            <div class="menu-icon" onclick="openSidebar()">
+                <!-- Menu icon content -->
+            </div>
+            <div class="header-right">
+                <span (click)="logout()" class="material-icons-outlined">logout</span>
+            </div>
+        </header>
+
+
+        <!-- Sidebar -->
+        <aside id="sidebar">
+            <div class="sidebar-title">
+                <div class="sidebar-brand">
+                    <img src="/assets/images/file.png" alt="cloud-logo" class="logo" />
+                </div>
+            </div>
+            <ul class="sidebar-list">
+                <li class="sidebar-list-item">
+                    <span class="material-icons-outlined">dashboard</span> Dashboard
+                </li>
+                <li class="sidebar-list-item">
+                    <span class="material-icons-outlined">attach_money</span> Revenue
+                </li>
+                <li class="sidebar-list-item">
+                    <span class="material-icons-outlined">emoji_events</span> Count to Wins
+                </li>
+                <li class="sidebar-list-item">
+                    <span class="material-icons-outlined">moving</span> Pipeline
+                </li>
+                <li class="sidebar-list-item">
+                    <span class="material-icons-outlined">edit</span> Signings
+                </li>
+                <li class="sidebar-list-item">
+                    <span class="material-icons-outlined">people</span> Clients
+                </li>
+                <li class="sidebar-list-item">
+                    <span class="material-icons-outlined">recent_actors</span> Account Executives
+                </li>
+
+            </ul>
+
+
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-container">
+            <div class="main-title">
+                <h2>DASHBOARD</h2>
+            </div>
+
+            <div class="main-cards">
+
+                <div class="card">
+                    <div class="card-inner">
+                        <h3>REVENUE</h3>
+                        <span class="material-icons-outlined">attach_money</span>
+                    </div>
+                    <div class="totals">
+                        <h1>${{revenueCount}}</h1>
+                    </div>
+
+                </div>
+                <div class="card">
+                    <div class="card-inner">
+                        <h3>COUNT TO WIN'S</h3>
+                        <span class="material-icons-outlined">emoji_events</span>
+
+                    </div>
+                    <div class="totals">
+                        <h1>{{winsCount}}</h1>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-inner">
+                        <h3>PIPELINE</h3>
+                        <span class="material-icons-outlined">moving</span>
+
+                    </div>
+                    <div class="totals">
+                        <h1>${{pipelineCount}}</h1>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-inner">
+                        <h3>SIGNINGS</h3>
+                        <span class="material-icons-outlined">edit</span>
+
+                    </div>
+                    <div class="totals">
+                        <h1>${{signingsCount}}</h1>
+                    </div>
+                </div>
+            </div>
+
+            <div class="table-container">
+                <div class="table-box">
+                    <app-count-to-win-table></app-count-to-win-table>
+                    <app-revenue-table></app-revenue-table>
+                    <app-chart></app-chart>
+                    <app-sign-chart></app-sign-chart>
+                </div>
+            </div>
+
+
+            <div class="accExec">
+                <app-account-executives></app-account-executives>
+            </div>
+
+        </main>
+
+    </div>
+
+</body>

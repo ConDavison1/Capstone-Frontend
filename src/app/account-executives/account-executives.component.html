@@ -1,0 +1,21 @@
+<div class="table-container">
+    <h2 class="table-title">Account Executives</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let executive of accountExecutives">
+                <td>{{ executive.executive_id }}</td>
+                <td>{{ executive.first_name }}</td>
+                <td>{{ executive.last_name }}</td>
+
+            </tr>
+        </tbody>
+    </table>
+</div>
